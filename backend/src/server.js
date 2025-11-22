@@ -34,6 +34,7 @@ class Server {
           "http://127.0.0.1:3000",
           "https://digi-assistant-three.vercel.app",
           "https://digi-assistant-ol9l.vercel.app",
+          "https://digi-assistant-zacu-7qetsdbuc-tahas-projects-24490bc5.vercel.app",
         ],
         credentials: true,
       })
