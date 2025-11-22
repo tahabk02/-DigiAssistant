@@ -1,0 +1,227 @@
+{
+  "dimensions": [
+    {
+      "id": "strategy",
+      "name": "Stratégie",
+      "description": "Vision et planification digitale de l'entreprise",
+      "weight": 1,
+      "pillars": [
+        {
+          "id": "vision",
+          "name": "Vision Digitale",
+          "maxScore": 9
+        },
+        {
+          "id": "objectives",
+          "name": "Objectifs & KPIs",
+          "maxScore": 9
+        },
+        {
+          "id": "budget",
+          "name": "Budget & Ressources",
+          "maxScore": 9
+        },
+        {
+          "id": "roadmap",
+          "name": "Roadmap de Transformation",
+          "maxScore": 9
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "name": "Culture & Humain",
+      "description": "Compétences et organisation digitale",
+      "weight": 1,
+      "pillars": [
+        {
+          "id": "skills",
+          "name": "Compétences Digitales",
+          "maxScore": 9
+        },
+        {
+          "id": "training",
+          "name": "Formation Continue",
+          "maxScore": 9
+        },
+        {
+          "id": "change",
+          "name": "Gestion du Changement",
+          "maxScore": 9
+        },
+        {
+          "id": "innovation",
+          "name": "Culture d'Innovation",
+          "maxScore": 9
+        }
+      ]
+    },
+    {
+      "id": "customer",
+      "name": "Relation Client",
+      "description": "Expérience et engagement client digital",
+      "weight": 1,
+      "pillars": [
+        {
+          "id": "channels",
+          "name": "Canaux Digitaux",
+          "maxScore": 9
+        },
+        {
+          "id": "experience",
+          "name": "Expérience Client",
+          "maxScore": 9
+        },
+        {
+          "id": "data_usage",
+          "name": "Utilisation des Données Client",
+          "maxScore": 9
+        },
+        {
+          "id": "personalization",
+          "name": "Personnalisation",
+          "maxScore": 9
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "name": "Processus",
+      "description": "Digitalisation et optimisation des processus métier",
+      "weight": 1,
+      "pillars": [
+        {
+          "id": "automation",
+          "name": "Automatisation",
+          "maxScore": 9
+        },
+        {
+          "id": "integration",
+          "name": "Intégration des Systèmes",
+          "maxScore": 9
+        },
+        {
+          "id": "agility",
+          "name": "Agilité Opérationnelle",
+          "maxScore": 9
+        },
+        {
+          "id": "optimization",
+          "name": "Optimisation Continue",
+          "maxScore": 9
+        }
+      ]
+    },
+    {
+      "id": "technology",
+      "name": "Technologie",
+      "description": "Infrastructure et outils digitaux",
+      "weight": 1,
+      "pillars": [
+        {
+          "id": "infrastructure",
+          "name": "Infrastructure IT",
+          "maxScore": 9
+        },
+        {
+          "id": "tools",
+          "name": "Outils Digitaux",
+          "maxScore": 9
+        },
+        {
+          "id": "cloud",
+          "name": "Cloud & Mobilité",
+          "maxScore": 9
+        },
+        {
+          "id": "analytics",
+          "name": "Analytics & BI",
+          "maxScore": 9
+        }
+      ]
+    },
+    {
+      "id": "security",
+      "name": "Sécurité",
+      "description": "Cybersécurité et protection des données",
+      "weight": 1,
+      "pillars": [
+        {
+          "id": "policies",
+          "name": "Politiques de Sécurité",
+          "maxScore": 9
+        },
+        {
+          "id": "protection",
+          "name": "Protection des Données",
+          "maxScore": 9
+        },
+        {
+          "id": "compliance",
+          "name": "Conformité Réglementaire",
+          "maxScore": 9
+        },
+        {
+          "id": "awareness",
+          "name": "Sensibilisation à la Sécurité",
+          "maxScore": 9
+        }
+      ]
+    }
+  ],
+  "maturityProfiles": [
+    {
+      "id": "beginner",
+      "name": "Débutant",
+      "minScore": 0,
+      "maxScore": 25,
+      "description": "Début de la transformation digitale avec des initiatives limitées",
+      "recommendations": [
+        "Définir une vision digitale claire",
+        "Allouer un budget dédié à la transformation",
+        "Former les équipes aux compétences digitales de base"
+      ],
+      "color": "#ef4444"
+    },
+    {
+      "id": "emergent",
+      "name": "Émergent",
+      "minScore": 26,
+      "maxScore": 50,
+      "description": "Initiatives digitales en cours avec une adoption progressive",
+      "recommendations": [
+        "Structurer la roadmap de transformation",
+        "Renforcer les compétences digitales",
+        "Développer les canaux digitaux"
+      ],
+      "color": "#f59e0b"
+    },
+
+    {
+      "id": "challenger",
+      "name": "Challenger",
+      "minScore": 51,
+      "maxScore": 75,
+      "description": "Maturité digitale avancée avec des pratiques établies",
+      "recommendations": [
+        "Optimiser l'automatisation des processus",
+        "Développer l'analyse prédictive",
+        "Innover dans l'expérience client"
+      ],
+      "color": "#3b82f6"
+    },
+    {
+      "id": "leader",
+      "name": "Leader",
+      "minScore": 76,
+      "maxScore": 100,
+      "description": "Excellence digitale avec innovation continue",
+      "recommendations": [
+        "Maintenir l'avance technologique",
+        "Partager les best practices",
+        "Explorer les technologies émergentes"
+      ],
+      "color": "#10b981"
+    }
+  ]
+}

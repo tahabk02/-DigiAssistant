@@ -1,0 +1,730 @@
+{
+  "questions": [
+    {
+      "id": "intro_company_size",
+      "type": "intro",
+      "text": "Bonjour ! Pour commencer, combien d'employés compte votre entreprise ?",
+      "options": [
+        { "id": "micro", "text": "1-10 employés", "value": "micro" },
+        { "id": "small", "text": "11-50 employés", "value": "small" },
+        { "id": "medium", "text": "51-250 employés", "value": "medium" },
+        { "id": "large", "text": "250+ employés", "value": "large" }
+      ],
+      "dimension": null,
+      "pillar": null,
+      "nextQuestion": "intro_sector"
+    },
+    {
+      "id": "intro_sector",
+      "type": "intro",
+      "text": "Dans quel secteur d'activité opérez-vous principalement ?",
+      "options": [
+        {
+          "id": "retail",
+          "text": "Commerce & Distribution",
+          "value": "retail"
+        },
+        {
+          "id": "services",
+          "text": "Services professionnels",
+          "value": "services"
+        },
+        {
+          "id": "manufacturing",
+          "text": "Industrie & Production",
+          "value": "manufacturing"
+        },
+        { "id": "tech", "text": "Technologie & IT", "value": "tech" },
+        { "id": "finance", "text": "Finance & Assurance", "value": "finance" },
+        { "id": "health", "text": "Santé", "value": "health" },
+        {
+          "id": "education",
+          "text": "Éducation & Formation",
+          "value": "education"
+        },
+        { "id": "other", "text": "Autre secteur", "value": "other" }
+      ],
+      "dimension": null,
+      "pillar": null,
+      "nextQuestion": "strategy_vision_1"
+    },
+    {
+      "id": "strategy_vision_1",
+      "type": "scored",
+      "text": "Parfait ! Parlons maintenant de votre stratégie digitale. Votre entreprise a-t-elle une vision digitale clairement définie ?",
+      "options": [
+        {
+          "id": "none",
+          "text": "Non, aucune vision digitale formalisée",
+          "score": 0
+        },
+        {
+          "id": "informal",
+          "text": "Oui, mais informelle et non documentée",
+          "score": 3
+        },
+        {
+          "id": "documented",
+          "text": "Oui, documentée et partagée en interne",
+          "score": 6
+        },
+        {
+          "id": "strategic",
+          "text": "Oui, totalement intégrée à notre stratégie globale",
+          "score": 9
+        }
+      ],
+      "dimension": "strategy",
+      "pillar": "vision",
+      "nextQuestion": "strategy_vision_2",
+      "conditionalNext": {
+        "none": "strategy_objectives_1",
+        "informal": "strategy_vision_2",
+        "documented": "strategy_vision_2",
+        "strategic": "strategy_vision_2"
+      }
+    },
+    {
+      "id": "strategy_vision_2",
+      "type": "scored",
+      "text": "Cette vision digitale est-elle communiquée et comprise par l'ensemble de l'organisation ?",
+      "options": [
+        {
+          "id": "no",
+          "text": "Non, elle reste au niveau de la direction",
+          "score": 0
+        },
+        {
+          "id": "management",
+          "text": "Oui, par le management principalement",
+          "score": 3
+        },
+        {
+          "id": "partial",
+          "text": "Oui, communiquée mais pas toujours comprise",
+          "score": 6
+        },
+        {
+          "id": "全company",
+          "text": "Oui, comprise et adoptée par tous",
+          "score": 9
+        }
+      ],
+      "dimension": "strategy",
+      "pillar": "vision",
+      "nextQuestion": "strategy_objectives_1"
+    },
+    {
+      "id": "strategy_objectives_1",
+      "type": "scored",
+      "text": "Avez-vous défini des objectifs digitaux mesurables avec des KPIs spécifiques ?",
+      "options": [
+        { "id": "none", "text": "Non, aucun objectif formalisé", "score": 0 },
+        {
+          "id": "vague",
+          "text": "Des objectifs généraux sans indicateurs précis",
+          "score": 3
+        },
+        { "id": "some", "text": "Quelques KPIs définis et suivis", "score": 6 },
+        {
+          "id": "comprehensive",
+          "text": "KPIs complets suivis en temps réel",
+          "score": 9
+        }
+      ],
+      "dimension": "strategy",
+      "pillar": "objectives",
+      "nextQuestion": "strategy_objectives_2",
+      "conditionalNext": {
+        "none": "strategy_budget_1",
+        "vague": "strategy_budget_1"
+      }
+    },
+    {
+      "id": "strategy_objectives_2",
+      "type": "scored",
+      "text": "Ces KPIs sont-ils régulièrement analysés pour ajuster votre stratégie ?",
+      "options": [
+        { "id": "never", "text": "Non, rarement consultés", "score": 0 },
+        {
+          "id": "occasional",
+          "text": "Oui, de manière occasionnelle",
+          "score": 3
+        },
+        {
+          "id": "regular",
+          "text": "Oui, revue mensuelle ou trimestrielle",
+          "score": 6
+        },
+        {
+          "id": "continuous",
+          "text": "Oui, monitoring continu avec ajustements agiles",
+          "score": 9
+        }
+      ],
+      "dimension": "strategy",
+      "pillar": "objectives",
+      "nextQuestion": "strategy_budget_1"
+    },
+    {
+      "id": "strategy_budget_1",
+      "type": "scored",
+      "text": "Quel pourcentage de votre budget annuel est alloué à la transformation digitale ?",
+      "options": [
+        { "id": "none", "text": "Aucun budget spécifique", "score": 0 },
+        { "id": "low", "text": "Moins de 5%", "score": 3 },
+        { "id": "medium", "text": "Entre 5% et 15%", "score": 6 },
+        { "id": "high", "text": "Plus de 15%", "score": 9 }
+      ],
+      "dimension": "strategy",
+      "pillar": "budget",
+      "nextQuestion": "strategy_roadmap_1"
+    },
+    {
+      "id": "strategy_roadmap_1",
+      "type": "scored",
+      "text": "Disposez-vous d'une roadmap de transformation digitale ?",
+      "options": [
+        {
+          "id": "none",
+          "text": "Non, nous avançons au fil de l'eau",
+          "score": 0
+        },
+        {
+          "id": "informal",
+          "text": "Un plan informel sans calendrier précis",
+          "score": 3
+        },
+        {
+          "id": "annual",
+          "text": "Une roadmap annuelle avec jalons",
+          "score": 6
+        },
+        {
+          "id": "strategic",
+          "text": "Une roadmap pluriannuelle détaillée et suivie",
+          "score": 9
+        }
+      ],
+      "dimension": "strategy",
+      "pillar": "roadmap",
+      "nextQuestion": "culture_skills_1"
+    },
+    {
+      "id": "culture_skills_1",
+      "type": "scored",
+      "text": "Excellent ! Parlons maintenant de vos équipes. Quel est le niveau général de compétences digitales de vos collaborateurs ?",
+      "options": [
+        {
+          "id": "basic",
+          "text": "Compétences de base (email, bureautique)",
+          "score": 0
+        },
+        {
+          "id": "intermediate",
+          "text": "Compétences intermédiaires sur certains outils",
+          "score": 3
+        },
+        {
+          "id": "advanced",
+          "text": "Compétences avancées sur plusieurs domaines",
+          "score": 6
+        },
+        { "id": "expert", "text": "Expertise digitale généralisée", "score": 9 }
+      ],
+      "dimension": "culture",
+      "pillar": "skills",
+      "nextQuestion": "culture_training_1"
+    },
+    {
+      "id": "culture_training_1",
+      "type": "scored",
+      "text": "Proposez-vous des programmes de formation digitale à vos collaborateurs ?",
+      "options": [
+        {
+          "id": "none",
+          "text": "Non, aucune formation spécifique",
+          "score": 0
+        },
+        {
+          "id": "occasional",
+          "text": "Formations ponctuelles selon les besoins",
+          "score": 3
+        },
+        {
+          "id": "regular",
+          "text": "Programme de formation régulier",
+          "score": 6
+        },
+        {
+          "id": "continuous",
+          "text": "Plan de développement continu et personnalisé",
+          "score": 9
+        }
+      ],
+      "dimension": "culture",
+      "pillar": "training",
+      "nextQuestion": "culture_change_1"
+    },
+    {
+      "id": "culture_change_1",
+      "type": "scored",
+      "text": "Comment gérez-vous le changement lié à la digitalisation ?",
+      "options": [
+        { "id": "none", "text": "Pas d'approche formalisée", "score": 0 },
+        {
+          "id": "reactive",
+          "text": "Gestion réactive au cas par cas",
+          "score": 3
+        },
+        {
+          "id": "structured",
+          "text": "Approche structurée avec accompagnement",
+          "score": 6
+        },
+        {
+          "id": "proactive",
+          "text": "Gestion proactive avec conduite du changement",
+          "score": 9
+        }
+      ],
+      "dimension": "culture",
+      "pillar": "change",
+      "nextQuestion": "culture_innovation_1"
+    },
+    {
+      "id": "culture_innovation_1",
+      "type": "scored",
+      "text": "Encouragez-vous l'innovation et l'expérimentation digitale ?",
+      "options": [
+        {
+          "id": "no",
+          "text": "Non, nous privilégions la stabilité",
+          "score": 0
+        },
+        {
+          "id": "limited",
+          "text": "De manière limitée et contrôlée",
+          "score": 3
+        },
+        {
+          "id": "encouraged",
+          "text": "Oui, nous encourageons les initiatives",
+          "score": 6
+        },
+        {
+          "id": "embedded",
+          "text": "Oui, c'est ancré dans notre culture",
+          "score": 9
+        }
+      ],
+      "dimension": "culture",
+      "pillar": "innovation",
+      "nextQuestion": "customer_channels_1"
+    },
+    {
+      "id": "customer_channels_1",
+      "type": "scored",
+      "text": "Très bien ! Voyons maintenant votre relation client. Quels canaux digitaux utilisez-vous pour interagir avec vos clients ?",
+      "options": [
+        {
+          "id": "none",
+          "text": "Principalement des canaux traditionnels",
+          "score": 0
+        },
+        { "id": "basic", "text": "Email et site web basique", "score": 3 },
+        {
+          "id": "multiple",
+          "text": "Plusieurs canaux (web, réseaux sociaux, mobile)",
+          "score": 6
+        },
+        {
+          "id": "omnichannel",
+          "text": "Expérience omnicanale intégrée",
+          "score": 9
+        }
+      ],
+      "dimension": "customer",
+      "pillar": "channels",
+      "nextQuestion": "customer_experience_1"
+    },
+    {
+      "id": "customer_experience_1",
+      "type": "scored",
+      "text": "Comment évaluez-vous et améliorez-vous l'expérience client digitale ?",
+      "options": [
+        { "id": "none", "text": "Pas d'évaluation systématique", "score": 0 },
+        {
+          "id": "feedback",
+          "text": "Collecte de feedback ponctuelle",
+          "score": 3
+        },
+        {
+          "id": "measured",
+          "text": "Mesure régulière avec indicateurs",
+          "score": 6
+        },
+        {
+          "id": "optimized",
+          "text": "Optimisation continue basée sur la data",
+          "score": 9
+        }
+      ],
+      "dimension": "customer",
+      "pillar": "experience",
+      "nextQuestion": "customer_data_1"
+    },
+    {
+      "id": "customer_data_1",
+      "type": "scored",
+      "text": "Utilisez-vous les données clients pour améliorer vos services ?",
+      "options": [
+        { "id": "none", "text": "Non, données peu exploitées", "score": 0 },
+        {
+          "id": "basic",
+          "text": "Utilisation basique (contacts, historique)",
+          "score": 3
+        },
+        {
+          "id": "analytics",
+          "text": "Analyses régulières pour améliorer l'offre",
+          "score": 6
+        },
+        {
+          "id": "predictive",
+          "text": "Analyses prédictives et intelligence artificielle",
+          "score": 9
+        }
+      ],
+      "dimension": "customer",
+      "pillar": "data_usage",
+      "nextQuestion": "customer_personalization_1"
+    },
+    {
+      "id": "customer_personalization_1",
+      "type": "scored",
+      "text": "Proposez-vous des expériences personnalisées à vos clients ?",
+      "options": [
+        { "id": "none", "text": "Non, approche standardisée", "score": 0 },
+        {
+          "id": "segments",
+          "text": "Segmentation basique par type de client",
+          "score": 3
+        },
+        { "id": "targeted", "text": "Contenu et offres ciblés", "score": 6 },
+        {
+          "id": "individualized",
+          "text": "Personnalisation 1-to-1 en temps réel",
+          "score": 9
+        }
+      ],
+      "dimension": "customer",
+      "pillar": "personalization",
+      "nextQuestion": "process_automation_1"
+    },
+    {
+      "id": "process_automation_1",
+      "type": "scored",
+      "text": "Passons maintenant à vos processus internes. Quel est le niveau d'automatisation de vos processus métier ?",
+      "options": [
+        { "id": "manual", "text": "Principalement manuels", "score": 0 },
+        {
+          "id": "partial",
+          "text": "Quelques processus automatisés",
+          "score": 3
+        },
+        {
+          "id": "significant",
+          "text": "Majorité des processus clés automatisés",
+          "score": 6
+        },
+        {
+          "id": "advanced",
+          "text": "Automatisation avancée avec IA/RPA",
+          "score": 9
+        }
+      ],
+      "dimension": "process",
+      "pillar": "automation",
+      "nextQuestion": "process_integration_1"
+    },
+    {
+      "id": "process_integration_1",
+      "type": "scored",
+      "text": "Vos systèmes et applications sont-ils intégrés entre eux ?",
+      "options": [
+        { "id": "siloed", "text": "Non, systèmes en silos", "score": 0 },
+        {
+          "id": "limited",
+          "text": "Intégrations limitées et manuelles",
+          "score": 3
+        },
+        {
+          "id": "connected",
+          "text": "Systèmes principaux connectés",
+          "score": 6
+        },
+        {
+          "id": "fully",
+          "text": "Intégration complète et temps réel",
+          "score": 9
+        }
+      ],
+      "dimension": "process",
+      "pillar": "integration",
+      "nextQuestion": "process_agility_1"
+    },
+    {
+      "id": "process_agility_1",
+      "type": "scored",
+      "text": "Votre organisation est-elle agile dans l'adaptation de ses processus ?",
+      "options": [
+        {
+          "id": "rigid",
+          "text": "Processus rigides et peu flexibles",
+          "score": 0
+        },
+        {
+          "id": "slow",
+          "text": "Changements possibles mais lents",
+          "score": 3
+        },
+        {
+          "id": "adaptable",
+          "text": "Bonne capacité d'adaptation",
+          "score": 6
+        },
+        {
+          "id": "agile",
+          "text": "Agilité totale avec amélioration continue",
+          "score": 9
+        }
+      ],
+      "dimension": "process",
+      "pillar": "agility",
+      "nextQuestion": "process_optimization_1"
+    },
+    {
+      "id": "process_optimization_1",
+      "type": "scored",
+      "text": "Mesurez-vous et optimisez-vous régulièrement vos processus ?",
+      "options": [
+        { "id": "no", "text": "Non, pas de mesure systématique", "score": 0 },
+        { "id": "occasional", "text": "Revues occasionnelles", "score": 3 },
+        {
+          "id": "regular",
+          "text": "Monitoring régulier et optimisation",
+          "score": 6
+        },
+        {
+          "id": "continuous",
+          "text": "Amélioration continue data-driven",
+          "score": 9
+        }
+      ],
+      "dimension": "process",
+      "pillar": "optimization",
+      "nextQuestion": "technology_infrastructure_1"
+    },
+    {
+      "id": "technology_infrastructure_1",
+      "type": "scored",
+      "text": "Parlons technologie maintenant. Comment qualifieriez-vous votre infrastructure IT ?",
+      "options": [
+        {
+          "id": "outdated",
+          "text": "Infrastructure vieillissante",
+          "score": 0
+        },
+        {
+          "id": "functional",
+          "text": "Fonctionnelle mais limitée",
+          "score": 3
+        },
+        { "id": "modern", "text": "Moderne et évolutive", "score": 6 },
+        {
+          "id": "cutting_edge",
+          "text": "De pointe avec technologies récentes",
+          "score": 9
+        }
+      ],
+      "dimension": "technology",
+      "pillar": "infrastructure",
+      "nextQuestion": "technology_tools_1"
+    },
+    {
+      "id": "technology_tools_1",
+      "type": "scored",
+      "text": "Quels outils digitaux utilisez-vous au quotidien ?",
+      "options": [
+        {
+          "id": "basic",
+          "text": "Outils basiques (email, bureautique)",
+          "score": 0
+        },
+        { "id": "standard", "text": "Suite d'outils standards", "score": 3 },
+        {
+          "id": "advanced",
+          "text": "Outils spécialisés et collaboratifs",
+          "score": 6
+        },
+        {
+          "id": "integrated",
+          "text": "Écosystème d'outils intégrés et performants",
+          "score": 9
+        }
+      ],
+      "dimension": "technology",
+      "pillar": "tools",
+      "nextQuestion": "technology_cloud_1"
+    },
+    {
+      "id": "technology_cloud_1",
+      "type": "scored",
+      "text": "Utilisez-vous des solutions cloud et mobiles ?",
+      "options": [
+        { "id": "no", "text": "Non, tout en local (on-premise)", "score": 0 },
+        {
+          "id": "limited",
+          "text": "Quelques services cloud basiques",
+          "score": 3
+        },
+        {
+          "id": "hybrid",
+          "text": "Approche hybride cloud/on-premise",
+          "score": 6
+        },
+        {
+          "id": "cloud_first",
+          "text": "Stratégie cloud-first avec mobilité",
+          "score": 9
+        }
+      ],
+      "dimension": "technology",
+      "pillar": "cloud",
+      "nextQuestion": "technology_analytics_1"
+    },
+    {
+      "id": "technology_analytics_1",
+      "type": "scored",
+      "text": "Disposez-vous d'outils d'analytics et de business intelligence ?",
+      "options": [
+        { "id": "none", "text": "Non, reporting manuel", "score": 0 },
+        {
+          "id": "basic",
+          "text": "Outils basiques (Excel, rapports simples)",
+          "score": 3
+        },
+        { "id": "bi_tools", "text": "Outils BI avec dashboards", "score": 6 },
+        {
+          "id": "advanced",
+          "text": "Analytics avancés avec IA et prédictif",
+          "score": 9
+        }
+      ],
+      "dimension": "technology",
+      "pillar": "analytics",
+      "nextQuestion": "security_policies_1"
+    },
+    {
+      "id": "security_policies_1",
+      "type": "scored",
+      "text": "Dernière dimension : la sécurité. Avez-vous des politiques de sécurité informatique formalisées ?",
+      "options": [
+        { "id": "none", "text": "Non, pas de politique formelle", "score": 0 },
+        {
+          "id": "basic",
+          "text": "Règles basiques non documentées",
+          "score": 3
+        },
+        {
+          "id": "documented",
+          "text": "Politique documentée et diffusée",
+          "score": 6
+        },
+        {
+          "id": "comprehensive",
+          "text": "Politique complète régulièrement mise à jour",
+          "score": 9
+        }
+      ],
+      "dimension": "security",
+      "pillar": "policies",
+      "nextQuestion": "security_protection_1"
+    },
+    {
+      "id": "security_protection_1",
+      "type": "scored",
+      "text": "Comment protégez-vous vos données sensibles ?",
+      "options": [
+        { "id": "minimal", "text": "Protection minimale", "score": 0 },
+        { "id": "basic", "text": "Antivirus et pare-feu basiques", "score": 3 },
+        {
+          "id": "robust",
+          "text": "Protection robuste multi-niveaux",
+          "score": 6
+        },
+        {
+          "id": "advanced",
+          "text": "Sécurité avancée avec chiffrement et monitoring",
+          "score": 9
+        }
+      ],
+      "dimension": "security",
+      "pillar": "protection",
+      "nextQuestion": "security_compliance_1"
+    },
+    {
+      "id": "security_compliance_1",
+      "type": "scored",
+      "text": "Êtes-vous en conformité avec les réglementations (RGPD, etc.) ?",
+      "options": [
+        { "id": "no", "text": "Non, pas de démarche engagée", "score": 0 },
+        {
+          "id": "partial",
+          "text": "Conformité partielle en cours",
+          "score": 3
+        },
+        {
+          "id": "compliant",
+          "text": "Conformité atteinte et documentée",
+          "score": 6
+        },
+        {
+          "id": "proactive",
+          "text": "Conformité totale avec veille réglementaire",
+          "score": 9
+        }
+      ],
+      "dimension": "security",
+      "pillar": "compliance",
+      "nextQuestion": "security_awareness_1"
+    },
+    {
+      "id": "security_awareness_1",
+      "type": "scored",
+      "text": "Sensibilisez-vous vos collaborateurs aux risques de cybersécurité ?",
+      "options": [
+        { "id": "no", "text": "Non, pas de sensibilisation", "score": 0 },
+        {
+          "id": "occasional",
+          "text": "Sensibilisation ponctuelle",
+          "score": 3
+        },
+        {
+          "id": "regular",
+          "text": "Formation régulière obligatoire",
+          "score": 6
+        },
+        {
+          "id": "continuous",
+          "text": "Programme continu avec simulations",
+          "score": 9
+        }
+      ],
+      "dimension": "security",
+      "pillar": "awareness",
+      "nextQuestion": null
+    }
+  ]
+}
