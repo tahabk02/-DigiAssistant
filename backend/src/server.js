@@ -32,11 +32,12 @@ class Server {
           "http://localhost:3001",
           "http://127.0.0.1:5173",
           "http://127.0.0.1:3000",
+          "https://digi-assistant-three.vercel.app",
+          "https://digi-assistant-ol9l.vercel.app",
         ],
         credentials: true,
       })
     );
-
     // Body parsing middleware
     this.app.use(express.json({ limit: "10mb" }));
     this.app.use(express.urlencoded({ extended: true }));
@@ -578,8 +579,13 @@ class Server {
   }
 }
 
-// Démarrer le serveur
+/// Pour Vercel (serverless) et local
 const server = new Server();
-server.start();
 
-module.exports = server;
+// Ne démarre que en local
+if (process.env.NODE_ENV !== "production") {
+  server.start();
+}
+
+// IMPORTANT pour Vercel - exporter l'app Express
+module.exports = server.app;
