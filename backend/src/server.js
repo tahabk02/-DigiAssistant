@@ -23,22 +23,39 @@ class Server {
     // Security middleware
     this.app.use(helmet());
 
-    // CORS middleware
+    // CORS middleware - CORRIGÉ avec fonction dynamique
     this.app.use(
       cors({
-        origin: [
-          "http://localhost:3000",
-          "http://localhost:5173",
-          "http://localhost:3001",
-          "http://127.0.0.1:5173",
-          "http://127.0.0.1:3000",
-          "https://digi-assistant-three.vercel.app",
-          "https://digi-assistant-ol9l.vercel.app",
-          "https://digi-assistant-zacu-7qetsdbuc-tahas-projects-24490bc5.vercel.app",
-        ],
+        origin: (origin, callback) => {
+          // Autoriser les requêtes sans origin (Postman, etc.)
+          if (!origin) return callback(null, true);
+
+          // Liste des origins autorisées
+          const allowedOrigins = [
+            "http://localhost:3000",
+            "http://localhost:5173",
+            "http://localhost:3001",
+            "http://127.0.0.1:5173",
+            "http://127.0.0.1:3000",
+          ];
+
+          // Vérifier si l'origin est dans la liste OU correspond au pattern Vercel
+          const isAllowed =
+            allowedOrigins.includes(origin) ||
+            /^https:\/\/digi-assistant.*\.vercel\.app$/.test(origin) ||
+            /^https:\/\/.*-tahas-projects-24490bc5\.vercel\.app$/.test(origin);
+
+          if (isAllowed) {
+            callback(null, true);
+          } else {
+            console.warn(`❌ CORS blocked origin: ${origin}`);
+            callback(new Error("Not allowed by CORS"));
+          }
+        },
         credentials: true,
       })
     );
+
     // Body parsing middleware
     this.app.use(express.json({ limit: "10mb" }));
     this.app.use(express.urlencoded({ extended: true }));
@@ -55,7 +72,11 @@ class Server {
 
     // Logging middleware
     this.app.use((req, res, next) => {
-      console.log(`${new Date().toISOString()} - ${req.method} ${req.url}`);
+      console.log(
+        `${new Date().toISOString()} - ${req.method} ${req.url} - Origin: ${
+          req.headers.origin || "none"
+        }`
+      );
       next();
     });
   }
@@ -461,7 +482,7 @@ class Server {
         (sum, answer) => sum + answer.score,
         0
       );
-      const maxScore = dimensionAnswers.length * 9; // 9 étant le score maximum par question
+      const maxScore = dimensionAnswers.length * 9;
       const percentage =
         maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
 
@@ -580,7 +601,7 @@ class Server {
   }
 }
 
-/// Pour Vercel (serverless) et local
+// Pour Vercel (serverless) et local
 const server = new Server();
 
 // Ne démarre que en local
